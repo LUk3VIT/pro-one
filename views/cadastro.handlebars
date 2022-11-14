@@ -1,0 +1,23 @@
+<main class="main">
+    <h1 class="titulo__cadastro">Area de cadastro</h1>
+    <form class="formulario" action="/cadastro" method="post" enctype="multipart/form-data">
+        <div class="mb-3">
+            <label class="form-label">Nome</label>
+            <input name="usuario" class="form-control">
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Email</label>
+            <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">      
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Password</label>
+            <input type="password" name="senha" class="form-control" id="exampleInputPassword1">
+        </div>
+        <div class="mb-3">
+            <label for="usuario">Foto:</label>
+            <input name="foto" type="file" />
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</main>

@@ -48,3 +48,40 @@ body{
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.titulo__cadastro{
+    display: flex;
+    justify-content: center;
+    margin: 20px auto;
+}
+
+.formulario{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin: 60px auto;
+    width: 800px;
+    
+}
+
+
