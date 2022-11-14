@@ -18,3 +18,8 @@ nesse desafio eu vou criar uma pagina responsiva que tenha as seguintes critéri
 #Linguagens
 
 HTML5-CSS3-Bootstrap-JavaScript-Node-Handlebars
+
+#feito
+
+foi feito um design basico com bootstrap e a conexão com o banco de dados
+
