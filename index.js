@@ -58,12 +58,13 @@ const uploads = multer({storage});
 app.get('/', (req,res) => {
     res.render('home');//layout = false é para dizer, que não temos nenhum layout definido ainda
 })
-
+//-------------------------------------------------------------------------------------------
+//criando o caminho da pagina do cadastro
 app.get('/cadastro', (req,res) => {
     res.render('cadastro');
 })
-
-//
+//-------------------------------------------------------------------------------------------
+//pegando os dados do forms e colocando eles no banco de dados
 app.post('/cadastro', uploads.single('foto'), (req,res) => {
 
     const usuario = req.body.usuario
@@ -80,6 +81,31 @@ app.post('/cadastro', uploads.single('foto'), (req,res) => {
         }
         res.redirect('/')
     })
+})
+//----------------------------------------------------------------------------------------
+//criando o caminho da pagina do login e fazendo session
+app.get('/post/login', (req, res) =>{
+    req.session.logado = false;
+    res.render('login');
+});
+
+app.get('/post/logout', (req, res) => {
+    req.session.logado = false;
+    const mensagem = 'Faça login no menu para acessar as páginas!!!';
+    res.render('home', {mensagem})
+})
+//-----------------------------------------------------------------------------------------
+//fazendo um requisisão no banco de dados para ver se o dados colocados estão certos
+
+app.post('/post/logarusuario', (req, res) =>{
+    const email = req.body.email
+    const senha = req.body.senha
+    const sql = `SELECT * FROM tbl_usuario WHERE email = '${email}' && senha = '${senha}'`
+    if (email && senha) {
+        conn.query(sql, function (erro, results, fields){
+            conn.query(sql,fubn)
+        })
+    }
 })
 
 //-----------------------------------------------------------------------------------------
